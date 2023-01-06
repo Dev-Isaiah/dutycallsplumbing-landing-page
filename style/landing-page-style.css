@@ -1,0 +1,311 @@
+/*\ ──────────────────────────────────── /*/
+/* FONT IMPORT */
+/*\ ──────────────────────────────────── /*/
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
+
+
+/*\ ──────────────────────────────────── /*/
+/* CUSTOM PROPERTY */
+/*\ ──────────────────────────────────── /*/
+
+:root {
+
+  /* 
+   * colors
+ */
+
+  --aswad-black: #18181b;
+  --emptiness: #FCFCFC;
+  --black: #000000;
+  --sea-of-tears: #194E9C;
+  --fluorescent-red: #FF5656;
+  --blizzard-blue: #A4EBF3;
+  --water-raceway: #0081C9;
+
+  /* 
+   * typeography
+ */
+
+  --ff-hind: "Hind", sans-serif;
+
+  --fs-1: clamp(3.2rem, 2.2769rem + 2.5641vw, 7.2rem);
+  --fs-2: clamp(2.6rem, 2.4615rem + 0.3846vw, 3.2rem);
+  --fs-3: clamp(2rem, 1.8600rem + 0.3889vw, 2.6rem);
+  --fs-4: clamp(1.8rem, 1.7077rem + 0.2564vw, 2.2rem);
+  --fs-5: clamp(1.8rem, 1.7538rem + 0.1282vw, 2rem);
+  --fs-6: 1.6rem;
+  --fs-7: 1.3rem;
+  --fs-8: 1.1rem;
+
+  --fw-700: 700;
+
+  /* 
+   * spacing
+ */
+
+  --section-padding: 7% 20%;
+  --text-margin-bottom: 26px;
+
+  /* 
+   * border
+ */
+
+  --radius-circle: 50%;
+  --radius-pill: 100px;
+  --radius-8: 8px;
+  --radius-6: 6px;
+}
+
+/*\ ──────────────────────────────────── /*/
+/* RESET */
+/*\ ──────────────────────────────────── /*/
+
+html {
+  font-family: var(--ff-hind);
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+body {
+  background-color: var(--emptiness);
+  color: var(--aswad-black);
+  font-size: 1.6rem;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1{
+  font-size: var(--fs-1);
+  font-weight: var(--fw-700);
+}
+
+h2{
+  font-size: var(--fs-2);
+  margin-bottom: var(--text-margin-bottom);
+}
+
+h3{
+  font-size: var(--fs-3);
+}
+
+h4{
+  font-size: var(--fs-4);
+}
+
+h5{
+  font-size: var(--fs-7);
+}
+
+h6{
+  font-size: var(--fs-8);
+}
+
+p{
+  font-size: var(--fs-6);
+  margin-bottom: var(--text-margin-bottom);
+}
+
+/*\ ──────────────────────────────────── /*/
+/* REUSE STYLE*/
+/*\ ──────────────────────────────────── /*/
+section {
+  padding: var(--section-padding);
+  text-align: center;
+}
+
+main,footer{
+  position: relative;
+  top: 80px;
+}
+/*\ ──────────────────────────────────── /*/
+/* NAV*/
+/*\ ──────────────────────────────────── /*/
+
+.content-wrapper {
+  position: fixed;
+  height: 80px;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  z-index: 100;
+  background: var(--sea-of-tears);
+  color: var(--emptiness);
+  transition: transform 0.4s;
+}
+
+.content-wrapper a{
+  font-size: var(--fs-3);
+  text-transform: uppercase;
+}
+
+.content-wrapper .call-us {
+  font-size: var(--fs-5);
+  display: flex;
+  text-transform: capitalize;
+}
+
+.content-wrapper {
+  transition: transform 0.4s;
+}
+
+.scroll-down .content-wrapper {
+  transform: translate3d(0, -100%, 0);
+}
+
+.scroll-up .content-wrapper {
+  transform: none;
+}
+
+@media screen and (max-width: 720px) {
+
+  .content-wrapper {
+    justify-content: center;
+  }
+
+  .content-wrapper .call-us {
+    display: none;
+  }
+}
+
+/*\ ──────────────────────────────────── /*/
+/* HERO*/
+/*\ ──────────────────────────────────── /*/
+
+#hero{
+  background: url("https://dutycallsplumbing.com/wp-content/uploads/2023/01/watermark-background-logo.png");
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: var(--emptiness);
+  padding: 10% 5%;
+}
+
+#hero .row{
+  z-index: 1;
+  position: relative;
+}
+
+#hero::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--black);
+  opacity: 0.50;
+}
+
+#hero h2{
+  margin-bottom: 26px;
+}
+
+.btn-request-service{
+  background: var(--fluorescent-red);
+  padding: 10px 30px;
+  border-radius: var(--radius-pill);
+}
+
+@media screen and (max-width: 720px){
+  #hero{
+    padding: 20% 5%;
+  }
+}
+
+/*\ ──────────────────────────────────── /*/
+/* ABOUT*/
+/*\ ──────────────────────────────────── /*/
+
+#about{
+  background: var(--sea-of-tears);
+  color: var(--emptiness);
+}
+
+#about .row-two{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 50px;
+  margin-top: 50px;
+}
+
+#about .row-two .column{
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+  background: var(--water-raceway);
+  padding: 30px;
+}
+
+.icon-text{
+  margin-bottom: 16px;
+}
+
+.about-icon-commercial{
+  width: 90%;
+}
+
+.about-icon-residential{
+  width: 98%;
+}
+
+@media screen and (min-width: 1024px) {
+  .about-icon-commercial{
+    width: 50%;
+  }
+  
+  .about-icon-residential{
+    width: 58%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-icon-commercial{
+    width: 50%;
+  }
+  
+  .about-icon-residential{
+    width: 58%;
+  }
+}
+
