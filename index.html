@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bab207fbef.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style/landing-page-style.css">
     <title>DutyCallsPlumbing — Landing Page</title>
 </head>
 
 <body>
-    <script src="./scripts/landing-page.js"></script>
+    <!-- SCRIPTS -->
+    <script src="scripts/landing-page-scroll.js"></script>
+    <script src="scripts/landing-page-modal.js"></script>
+
     <header class="page-header">
         <nav>
             <div class="content-wrapper">
@@ -46,13 +50,18 @@
             <div class="row-two">
                 <div class="column">
                     <h3 class="icon-title">COMMERCIAL</h3>
-                    <p class="icon-description">DutyCallsPluming is not only a residential service but, also provides commercial plumbing services seeking a variety of customer clients!</p>
-                        <img class="about-icon" src="https://dutycallsplumbing.com/wp-content/uploads/2023/01/commercial-icon.png" alt="Business building">
+                    <p class="icon-description">DutyCalls Pluming is not only a residential service but, also provides
+                        commercial plumbing services seeking a variety of customer clients!</p>
+                    <img class="about-icon"
+                        src="https://dutycallsplumbing.com/wp-content/uploads/2023/01/commercial-icon.png"
+                        alt="Business building">
                 </div>
                 <div class="column">
                     <h3 class="icon-title">RESIDENTIAL</h3>
-                    <p class="icon-description">We will always provide high-quality work that produces an exceptional product.</p>
-                        <img class="about-icon" src="https://dutycallsplumbing.com/wp-content/uploads/2023/01/home-icon.png">
+                    <p class="icon-description">We will always provide high-quality work that produces an exceptional
+                        product.</p>
+                    <img class="about-icon"
+                        src="https://dutycallsplumbing.com/wp-content/uploads/2023/01/home-icon.png">
                 </div>
             </div>
         </section>
@@ -61,16 +70,45 @@
             <div class="row">
                 <div class="column">
                     <h2>Services.</h2>
-                    <div class="service-information-container">
-                        <div class="service-info-box"></div>
-                        <div class="service-info-box"></div>
-                        <div class="service-info-box"></div>
-                        <div class="service-info-box"></div>
-                        <div class="service-info-box"></div>
-                        <div class="service-info-box"></div>
+                    <div class="services-info-box-container">
+                        <div class="services-info-box">
+                            <i class="fa-solid fa-toolbox services-icon"></i>
+                            <h4>Installations</h4>
+                            <p>Click the box to see more information on provided services.</p>
+                        </div>
+                        <div class="services-info-box">
+                            <i class="fa-solid fa-droplet services-icon"></i>
+                            <h4>Leak Repairs</h4>
+                            <p>Click the box to see more information on provided services.</p>
+                        </div>
+                        <div class="services-info-box">
+                            <i class="fa-solid fa-toilet services-icon"></i>
+                            <h4>Plumbing Services</h4>
+                            <p>Click the box to see more information on provided services.</p>
+                        </div>
+                        <div class="services-info-box">
+                            <i class="fa-solid fa-water services-icon"></i>
+                            <h4>Water Treatment</h4>
+                            <p>Click the box to see more information on provided services.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- MODAL SERVICES -->
+            <div id="servicesModal" class="modal">
+                <div class="modal-content">
+                    <button class="btn-close">X</button>
+                    <h3>Test Title</h3>
+                    <ul>
+                        <li>test</li>
+                        <li>test</li>
+                        <li>test</li>
+                        <li>test</li>
+                    </ul>
+                </div>
+            </div>
+
         </section>
 
         <section id="banner">
