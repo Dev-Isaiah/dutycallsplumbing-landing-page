@@ -38,6 +38,7 @@
   --fs-8: 1.1rem;
 
   --fw-700: 700;
+  --fw-300: 300;
 
   /* 
    * spacing
@@ -109,35 +110,36 @@ img {
   height: auto;
 }
 
-h1{
+h1 {
   font-size: var(--fs-1);
   font-weight: var(--fw-700);
 }
 
-h2{
+h2 {
   font-size: var(--fs-2);
   margin-bottom: var(--text-margin-bottom);
 }
 
-h3{
+h3 {
   font-size: var(--fs-3);
 }
 
-h4{
+h4 {
   font-size: var(--fs-4);
 }
 
-h5{
+h5 {
   font-size: var(--fs-7);
 }
 
-h6{
+h6 {
   font-size: var(--fs-8);
 }
 
-p{
+p {
   font-size: var(--fs-6);
   margin-bottom: var(--text-margin-bottom);
+  font-weight: var(--fw-300);
 }
 
 /*\ ──────────────────────────────────── /*/
@@ -148,10 +150,12 @@ section {
   text-align: center;
 }
 
-main,footer{
+main,
+footer {
   position: relative;
   top: 80px;
 }
+
 /*\ ──────────────────────────────────── /*/
 /* NAV*/
 /*\ ──────────────────────────────────── /*/
@@ -172,7 +176,7 @@ main,footer{
   transition: transform 0.4s;
 }
 
-.content-wrapper a{
+.content-wrapper a {
   font-size: var(--fs-3);
   text-transform: uppercase;
 }
@@ -210,7 +214,7 @@ main,footer{
 /* HERO*/
 /*\ ──────────────────────────────────── /*/
 
-#hero{
+#hero {
   background: url("https://dutycallsplumbing.com/wp-content/uploads/2023/01/watermark-background-logo.png");
   position: relative;
   background-repeat: no-repeat;
@@ -220,12 +224,12 @@ main,footer{
   padding: 10% 5%;
 }
 
-#hero .row{
+#hero .row {
   z-index: 1;
   position: relative;
 }
 
-#hero::before{
+#hero::before {
   content: "";
   position: absolute;
   top: 0;
@@ -236,18 +240,18 @@ main,footer{
   opacity: 0.50;
 }
 
-#hero h2{
+#hero h2 {
   margin-bottom: 26px;
 }
 
-.btn-request-service{
+.btn-request-service {
   background: var(--fluorescent-red);
   padding: 10px 30px;
   border-radius: var(--radius-pill);
 }
 
-@media screen and (max-width: 720px){
-  #hero{
+@media screen and (max-width: 720px) {
+  #hero {
     padding: 20% 5%;
   }
 }
@@ -256,56 +260,40 @@ main,footer{
 /* ABOUT*/
 /*\ ──────────────────────────────────── /*/
 
-#about{
+#about {
   background: var(--sea-of-tears);
   color: var(--emptiness);
 }
 
-#about .row-two{
+#about .row-two {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: center;
   gap: 50px;
   margin-top: 50px;
 }
 
-#about .row-two .column{
+#about .row-two .column {
   display: flex;
   flex-direction: column;
-  
+  justify-content: space-between;
   align-items: center;
   background: var(--water-raceway);
   padding: 30px;
+  width: 100%;
 }
 
-.icon-text{
+.icon-title {
   margin-bottom: 16px;
+  color: var(--aswad-black);
+  font-weight: var(--fw-700);
 }
 
-.about-icon-commercial{
-  width: 90%;
+.icon-description{
+  font-size: var(--fs-5);
 }
 
-.about-icon-residential{
-  width: 98%;
+.about-icon {
+  max-width: 30%;
+  min-width: 150px;
 }
-
-@media screen and (min-width: 1024px) {
-  .about-icon-commercial{
-    width: 50%;
-  }
-  
-  .about-icon-residential{
-    width: 58%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .about-icon-commercial{
-    width: 50%;
-  }
-  
-  .about-icon-residential{
-    width: 58%;
-  }
-}
-
