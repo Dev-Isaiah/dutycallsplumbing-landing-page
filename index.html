@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SCRIPTS -->
     <script src="https://kit.fontawesome.com/bab207fbef.js" crossorigin="anonymous"></script>
+    <!-- STYLES -->
     <link rel="stylesheet" href="./style/landing-page-style.css">
     <title>DutyCallsPlumbing — Landing Page</title>
 </head>
@@ -13,7 +15,7 @@
 <body>
     <!-- SCRIPTS -->
     <script src="scripts/landing-page-scroll.js"></script>
-    <script src="scripts/landing-page-modal.js"></script>
+    <script src="scripts/landing-page-modal.js" defer></script>
 
     <header class="page-header">
         <nav>
@@ -25,25 +27,33 @@
     </header>
 
     <main>
+
+        <!-- HERO -->
         <section id="hero">
             <div class="row">
                 <div class="columm">
                     <h1>Plumbing Solutions</h1>
                     <h2>20+ Years of Plumbing Experience.</h2>
-                    <a class="btn-request-service" href="#">Request Services</a>
+                    <a class="btn-request-service"
+                        href="https://dutycallsplumbing.com/contact-us/#request-plumbing-services">Request Services</a>
                 </div>
             </div>
         </section>
 
+        <!-- ABOUT -->
         <section id="about">
             <div class="row-one">
                 <div class="column">
                     <h2>About us.</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Need a plumber somewhere in Indy? Enjoy a home with plumbing-free problems! DutyCallsPlumbing has
+                        had the go-to plumbing around Indy for 2 years, and already making loyal clients! We can help
+                        you with all of your Replacements, Relocations, and Installations, as well as any repairs, and
+                        needs including leaks.
+                        <br>
+                        <br>
+                        We also offer a variety of services such as: Sump Pump, Plumbing Updating, Basement Plumbing
+                        Needs, Pre-Purchase Home Plumbing Inspections, and much more.
+                    </p>
                 </div>
             </div>
 
@@ -66,28 +76,30 @@
             </div>
         </section>
 
+
+        <!-- SERVICES -->
         <section id="services">
             <div class="row">
                 <div class="column">
                     <h2>Services.</h2>
                     <div class="services-info-box-container">
                         <div class="services-info-box">
-                            <i class="fa-solid fa-toolbox services-icon"></i>
-                            <h4>Installations</h4>
-                            <p>Click the box to see more information on provided services.</p>
-                        </div>
-                        <div class="services-info-box">
-                            <i class="fa-solid fa-droplet services-icon"></i>
-                            <h4>Leak Repairs</h4>
-                            <p>Click the box to see more information on provided services.</p>
-                        </div>
-                        <div class="services-info-box">
                             <i class="fa-solid fa-toilet services-icon"></i>
                             <h4>Plumbing Services</h4>
                             <p>Click the box to see more information on provided services.</p>
                         </div>
                         <div class="services-info-box">
-                            <i class="fa-solid fa-water services-icon"></i>
+                            <i class="fa-solid fa-droplet services-icon"></i>
+                            <h4>Water Heaters</h4>
+                            <p>Click the box to see more information on provided services.</p>
+                        </div>
+                        <div class="services-info-box">
+                            <i class="fa-solid fa-faucet services-icon"></i>
+                            <h4>Drains & Sewers</h4>
+                            <p>Click the box to see more information on provided services.</p>
+                        </div>
+                        <div class="services-info-box">
+                            <i class="fa-solid fa-recycle services-icon"></i>
                             <h4>Water Treatment</h4>
                             <p>Click the box to see more information on provided services.</p>
                         </div>
@@ -96,40 +108,85 @@
             </div>
 
             <!-- MODAL SERVICES -->
-            <div id="servicesModal" class="modal">
+            <div id="services-modal" class="modal">
                 <div class="modal-content">
                     <button class="btn-close">X</button>
-                    <h3>Test Title</h3>
-                    <ul>
-                        <li>test</li>
-                        <li>test</li>
-                        <li>test</li>
-                        <li>test</li>
-                    </ul>
+
+                    <div class="modal-information">
+                        <h3>Plumbing Services</h3>
+                        <ul>
+                            <li>Plumbing Repairs</li>
+                            <li>Sump Pumps</li>
+                            <li>Leak Repairs</li>
+                            <li>Gas Plumbing</li>
+                            <li>WaterLine Replacement</li>
+                            <li>Garbage Disposal</li>
+                            <li>Toilets</li>
+                            <li>Faucets</li>
+                            <li>Showers</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-information">
+                        <h3>Water Heaters</h3>
+                        <ul>
+                            <li>Water Heater Repair</li>
+                            <li>Tankless Water Heaters</li>
+                            <li>Water Heater Replacement</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-information">
+                        <h3>Drains & Sewers</h3>
+                        <ul>
+                            <li>Drain Cleaning</li>
+                            <li>Sewer Repair</li>
+                            <li>Sewer Replacement</li>
+                            <li>Pipe Lining Services</li>
+                            <li>Trenchless Pipe Bursting</li>
+                            <li>Rooter</li>
+                            <li>Jetting</li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-information">
+                        <h3>Water Treatment</h3>
+                        <ul>
+                            <li>Water Quality Analysis</li>
+                            <li>Water Softening</li>
+                            <li>Reverse Osmosis</li>
+                            <li>Water Leak Detector</li>
+                            <li>Water Filtration System</li>
+                            <li>Chlorine Removal</li>
+                            <li>Carbon Filters</li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
 
         </section>
 
+        <!-- BANNER -->
         <section id="banner">
-            <div class="row">
+            <div class="row row-one">
                 <div class="column">
                     <h2>Need a Plumber Now?</h2>
-                    <h3>Press the button or call the number below</h3>
+                    <h3>Tap the button or call the number below</h3>
                 </div>
             </div>
-            <div class="row">
+            <div class="row row-two">
                 <div class="column">
-                    <h4>(317) 665-7745</h4>
-                    <button>Call Us</button>
+                    <a class="banner-call-us-btn" href="#">Call Us</a>
+                    <p>(765) 310-1333</p>
                 </div>
             </div>
         </section>
     </main>
     <footer>
-        <div class="row">
-            <div class="column">
-                <h3>Service Locations</h3>
+        <div class="row row-one">
+            <div class="column-one">
+                <h2>Service Locations</h2>
                 <ul class="service-locations">
                     <li>Indiana</li>
                     <li>Indiana</li>
@@ -137,22 +194,37 @@
                     <li>Indiana</li>
                     <li>Indiana</li>
                     <li>Indiana</li>
+                    <li>Indiana</li>
+                    <li>Indiana</li>
+                    <li>Indiana</li>
+                    <li>Indiana</li>
+                    <li>Indiana</li>
+                    <li>Indiana</li>
+                    <li>Indiana</li>
+                    <li>Indiana</li>
+                    <li>Indiana</li>
+                    <li>Indiana</li>
+                    <li>Indiana</li>
+                    <li>Indiana</li>
+                    <li>Indiana</li>
+                    <li>Indiana</li>
                 </ul>
-                <div class="column">
-                    <h3>Business Hours</h3>
-                    <ul class="business-hours">
-                        <li>Monday - Friday: 8AM-5AM</li>
-                        <li>Saturday: Closed</li>
-                        <li>Sunday: Closed</li>
-                    </ul>
-                </div>
             </div>
-            <div class="row">
-                <div class="column">
-                    <p>Copyright</p>
-                    <p>Developer: Isaiah Brown</p>
-                </div>
+            <div class="column-two">
+                <h2>Business Hours</h2>
+                <ul class="business-hours">
+                    <li>Monday - Friday: 8AM-5AM</li>
+                    <li>Saturday: Closed</li>
+                    <li>Sunday: Closed</li>
+                </ul>
             </div>
+        </div>
+        <div class="row row-two">
+            <div class="column">
+                <p>Copyright &copy; | DutyCallsPlumbing, LLC | All Rights Reserved</p>
+                <p>Developer: Isaiah Brown</p>
+            </div>
+        </div>
     </footer>
 </body>
 

@@ -23,6 +23,9 @@
   --water-raceway: #0081C9;
   --extraviolet: #EEEEEE;
   --tangled-web: #B2B2B2;
+  --antarctic-deep: #343A40;
+  --linear-gradient-dark-blue-light-blue: -webkit-linear-gradient(bottom right, #075DE2, #5C93E8);
+  --linear-gradient-light-blue-dark-blue: -webkit-radial-gradient(top left, #5C94E8, #01183B);
 
   /* 
    * typeography
@@ -48,15 +51,9 @@
    * spacing
  */
 
-  --section-padding: 7% 20%;
+  --section-padding-desktop: 7% 15%;
+  --section-padding-tablet-mobile: 7% 10%;
   --text-margin-bottom: 26px;
-
-  /* 
-   * box-shadow
- */
-
-  --box-shadow-bottom: 0px 12px 9px var(--aswad-black);
-  ;
 
   /* 
    * border
@@ -90,7 +87,7 @@ a {
   text-decoration: none;
 }
 
-button{
+button {
   cursor: pointer;
 }
 
@@ -161,14 +158,43 @@ p {
 /* REUSE STYLE*/
 /*\ ──────────────────────────────────── /*/
 section {
-  padding: var(--section-padding);
+  padding: var(--section-padding-desktop);
   text-align: center;
+}
+
+@media screen and (max-width: 720px) {
+  section {
+    padding: var(--section-padding-tablet-mobile);
+  }
 }
 
 main,
 footer {
   position: relative;
   top: 80px;
+}
+
+/*\ ──────────────────────────────────── /*/
+/* KEYFRAME ANIMATIONS*/
+/*\ ──────────────────────────────────── /*/
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 /*\ ──────────────────────────────────── /*/
@@ -234,6 +260,7 @@ footer {
   position: relative;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   background-size: cover;
   color: var(--emptiness);
   padding: 10% 5%;
@@ -276,13 +303,13 @@ footer {
 /*\ ──────────────────────────────────── /*/
 
 #about {
-  background: var(--sea-of-tears);
+  background: var(--linear-gradient-light-blue-dark-blue);
   color: var(--emptiness);
 }
 
 #about .row-two {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 450px));
   justify-content: center;
   gap: 50px;
   margin-top: 50px;
@@ -317,32 +344,33 @@ footer {
 /* SERVICES*/
 /*\ ──────────────────────────────────── /*/
 
-#services{
+#services {
   position: relative;
 }
 
 .services-info-box-container {
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, 250px);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 400px));
   gap: 20px;
   grid-auto-rows: 1fr;
   margin-top: 50px;
 }
 
 .services-info-box {
-  width: 250px;
+  width: 100%;
   height: 250px;
   border: 2px solid var(--black);
-  box-shadow: var(--box-shadow-bottom);
+  box-shadow: 0px 12px 9px var(--sea-of-tears);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   padding: 5px 15px;
   cursor: pointer;
+  transition: 0.5s ease;
 }
 
-.services-info-box h4{
+.services-info-box h4 {
   color: var(--sea-of-tears);
 }
 
@@ -350,11 +378,29 @@ footer {
   font-size: var(--fs-icon);
 }
 
+/* HOVER OVER SERVICES BOXES */
+.services-info-box:hover,
+.services-info-box:active {
+  background: var(--sea-of-tears);
+  color: var(--emptiness);
+  box-shadow: none;
+}
+
+.services-info-box:hover h4,
+.services-info-box:active h4 {
+  color: var(--emptiness);
+}
+
+.services-info-box:hover .services-icon,
+.services-info-box:active .services-icon {
+  color: var(--blizzard-blue);
+}
+
 /*\ ──────────────────────────────────── /*/
 /* MODAL*/
 /*\ ──────────────────────────────────── /*/
 
-.modal{
+.modal {
   display: none;
   position: fixed;
   width: 100%;
@@ -366,13 +412,14 @@ footer {
   background-color: rgb(0, 0, 0, 0.4);
   justify-content: center;
   align-items: center;
+  padding: 5%;
 }
 
-.modal-content{
+.modal-content {
   background: var(--emptiness);
-  width: 30%;
+  width: 600px;
   min-width: 280px;
-  min-height: 350px;
+  height: 400px;
   border-radius: var(--radius-8);
   border: 1px solid var(--black);
   padding: 10px 10px 15px 50px;
@@ -380,9 +427,19 @@ footer {
   flex-direction: column;
   align-items: flex-start;
   box-shadow: 2px 2px 4px var(--aswad-black);
+  overflow: hidden;
+  overflow-y: scroll;
+  text-align: left;
 }
 
-.btn-close{
+.modal-content ul li::before {
+  content: '\f058';
+  font-family: "Font Awesome 6 Free";
+  margin-right: 8px;
+  color: var(--sea-of-tears);
+}
+
+.btn-close {
   align-self: flex-end;
   border-radius: var(--radius-circle);
   border: none;
@@ -393,6 +450,169 @@ footer {
 }
 
 .btn-close:hover,
-.btn-close:focus{
+.btn-close:focus {
   color: var(--black);
+}
+
+#services-modal .modal-information {
+  display: none;
+}
+
+/*\ ──────────────────────────────────── /*/
+/* BANNER*/
+/*\ ──────────────────────────────────── /*/
+
+#banner {
+  background: var(--linear-gradient-dark-blue-light-blue);
+  color: var(--emptiness);
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+#banner h2 {
+  font-size: calc(var(--fs-2) + 0.5rem);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+#banner h3 {
+  font-weight: var(--fw-300);
+}
+
+#banner p {
+  margin: 0;
+  font-size: var(--fs-4);
+}
+
+#banner .row {
+  margin: 26px auto;
+}
+
+#banner .row-one {
+  margin-bottom: 50px;
+}
+
+#banner .row-two .column {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+@media screen and (max-width: 700px) {
+  #banner .row-two .column {
+    flex-direction: column-reverse;
+  }
+}
+
+.banner-call-us-btn {
+  background: var(--fluorescent-red);
+  padding: 8px 60px;
+  border-radius: var(--radius-pill);
+  font-size: calc(var(--fs-4) - 0.2rem);
+}
+
+.banner-call-us-btn::after {
+  content: '\f879';
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-left: 8px;
+}
+
+/*\ ──────────────────────────────────── /*/
+/* FOOTER*/
+/*\ ──────────────────────────────────── /*/
+
+footer {
+  background: url("https://dutycallsplumbing.com/wp-content/uploads/2023/01/footer-background-landing-page-new.png");
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--emptiness);
+  height: auto;
+  padding: 2% 5%;
+  text-align: center;
+}
+
+footer .row {
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--black);
+  opacity: 0.85;
+}
+
+footer ul {
+  font-size: var(--fs-4);
+  font-weight: var(--fw-300);
+}
+
+footer .row-one {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: 2px solid var(--sea-of-tears);
+  margin-bottom: 26px;
+  padding-bottom: 36px;
+}
+
+footer .row-one .column-one {
+  width: 60%;
+}
+
+footer .row-one .column-two {
+  border-left: 6px solid var(--water-raceway);
+  padding-left: 36px;
+}
+
+@media screen and (max-width: 879px) {
+  footer .row-one .column-two {
+    border: none;
+    padding-left: 0;
+  }
+}
+
+footer .service-locations {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 36px;
+}
+
+@media screen and (max-width: 390px) {
+  footer .service-locations {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+
+}
+
+footer .business-hours {
+  line-height: 3;
+}
+
+footer .row-two .column {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 616px) {
+  footer .row-two .column {
+    justify-content: center;
+  }
 }
