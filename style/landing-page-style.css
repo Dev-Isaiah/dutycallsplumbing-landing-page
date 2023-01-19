@@ -328,6 +328,11 @@ footer {
   background: var(--fluorescent-red);
   padding: 10px 30px;
   border-radius: var(--radius-pill);
+  transition: 0.5s;
+}
+
+.btn-request-service:hover{
+  background-color: var(--antarctic-deep);
 }
 
 @media screen and (max-width: 720px) {
@@ -559,6 +564,11 @@ footer {
   padding: 8px 60px;
   border-radius: var(--radius-pill);
   font-size: calc(var(--fs-4) - 0.2rem);
+  transition: 0.5s;
+}
+
+.banner-call-us-btn:hover{
+  background: var(--antarctic-deep);
 }
 
 .banner-call-us-btn::after {
